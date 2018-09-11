@@ -11,11 +11,11 @@ public class Hokage {
         this.nama = nama;
     }
 
-    public String getRekams() {
+    public String getRemarks() {
         return remaks;
     }
 
-    public void setRemaks(String remaks) {
+    public void setRemarks(String remaks) {
         this.remaks = remaks;
     }
 
@@ -23,7 +23,7 @@ public class Hokage {
         return foto;
     }
 
-    public void setName(String foto) {
+    public void setFoto(String foto) {
         this.foto = foto;
     }
 }

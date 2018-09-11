@@ -18,9 +18,9 @@ public class HokageData {
         ArrayList<Hokage> list = new ArrayList<>();
         for (int i = 0; i <data.length; i++) {
             hokage = new Hokage();
-            hokage.setName(data[i][0]);
-            hokage.setName(data[i][1]);
-            hokage.setName(data[i][2]);
+            hokage.setNama(data[i][0]);
+            hokage.setRemarks(data[i][1]);
+            hokage.setFoto(data[i][2]);
 
             list.add(hokage);
         }

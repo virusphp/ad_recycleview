@@ -12,37 +12,39 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-public class ListPresidentAdapter extends RecyclerView.Adapter<ListPresidentAdapter.CategoryViewHolder>{
+public class ListHokageAdapter extends RecyclerView.Adapter<ListHokageAdapter.CategoryViewHolder>{
     private Context context;
 
-    public ArrayList<President> getListPresident() {
-        return listPresident;
+    public ArrayList<Hokage> getListHokage() {
+        return listHokage;
     }
 
-    public void setListPresident(ArrayList<President> listPresident) {
-        this.listPresident = listPresident;
+    public void setListHokage(ArrayList<Hokage> listHokage)
+    {
+        this.listHokage = listHokage;
     }
 
-    private ArrayList<President>listPresident;
+    private ArrayList<Hokage> listHokage;
 
-    public ListPresidentAdapter(Context context) {
+    public ListHokageAdapter(Context context)
+    {
         this.context = context;
     }
 
     @Override
-    public CategoryViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemRow = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_row_president, parent, false);
+    public CategoryViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
+    {
+        View itemRow = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_row_hokage, parent, false);
         return new CategoryViewHolder(itemRow);
     }
 
     @Override
     public void onBindViewHolder(CategoryViewHolder holder, int position) {
-
-        holder.tvName.setText(getListPresident().get(position).getName());
-        holder.tvRemarks.setText(getListPresident().get(position).getRemarks());
+        holder.tvName.setText(getListHokage().get(position).getNama());
+        holder.tvRemarks.setText(getListHokage().get(position).getRemarks());
 
         Glide.with(context)
-                .load(getListPresident().get(position).getPhoto())
+                .load(getListHokage().get(position).getFoto())
                 .override(55, 55)
                 .crossFade()
                 .into(holder.imgPhoto);
@@ -50,10 +52,10 @@ public class ListPresidentAdapter extends RecyclerView.Adapter<ListPresidentAdap
 
     @Override
     public int getItemCount() {
-        return getListPresident().size();
+        return getListHokage().size();
     }
 
-    class CategoryViewHolder extends RecyclerView.ViewHolder{
+    class CategoryViewHolder extends RecyclerView.ViewHolder {
         TextView tvName;
         TextView tvRemarks;
         ImageView imgPhoto;
